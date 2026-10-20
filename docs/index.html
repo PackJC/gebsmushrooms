@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <title>Geb's Mushrooms</title>
+  <meta name="description" content="Geb's Mushrooms for DayZ: 63 wild fungi, 36 edible and 27 poisonous look-alikes, and a complete server setup guide.">
+  <meta property="og:title" content="Geb's Mushrooms for DayZ">
+  <meta property="og:description" content="Sixty-three wild fungi for DayZ servers. Know which is which: some feed you, some make you sick, and some kill.">
+  <meta property="og:url" content="https://packjc.github.io/gebsmushrooms/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/PackJC/gebsmushrooms/master/docs/assets/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Geb's Mushrooms, back to top">
+        <span class="glyph" aria-hidden="true"></span>
+        <span>Geb's Mushrooms</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections">
+        <a href="#mushrooms">Mushrooms</a>
+        <a href="#setup">Server setup</a>
+        <a href="#classnames">Classnames</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <!-- Workshop: point these links at the item's page once Geb's Mushrooms is published -->
+      <a class="pill small" href="https://steamcommunity.com/workshop/browse/?appid=221100&amp;searchtext=Geb%27s+Mushrooms">Subscribe</a>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow rise">A DayZ mod by Geb</p>
+      <h1 class="rise">Mushrooms.</h1>
+      <p class="lede rise">Forage with care. <b data-stat="fungi">63</b> wild fungi grow on the forest floor: <b data-stat="edible">36</b> make a good meal, and <b data-stat="poisonous">27</b> look-alikes will make you sick, or worse.</p>
+      <div class="cta rise">
+        <a class="pill" href="https://steamcommunity.com/workshop/browse/?appid=221100&amp;searchtext=Geb%27s+Mushrooms">Find it on Steam</a>
+        <a class="link-arrow" href="#setup">Set up your server</a>
+      </div>
+      <div class="lineup rise" aria-hidden="true">
+        <img src="assets/img/hero/blackmorel.webp" alt="" class="l1">
+        <img src="assets/img/hero/chickenofthewoods.webp" alt="" class="l2">
+        <img src="assets/img/hero/deathcap.webp" alt="" class="l3">
+        <img src="assets/img/hero/lionsmane.webp" alt="" class="l4">
+        <img src="assets/img/hero/jackolantern.webp" alt="" class="l5">
+        <img src="assets/img/hero/puffball.webp" alt="" class="l6">
+        <img src="assets/img/hero/chanterelle.webp" alt="" class="l7">
+      </div>
+    </section>
+
+    <section class="stats" aria-label="At a glance">
+      <div class="stat reveal"><b data-stat="fungi">63</b><span>wild fungi</span></div>
+      <div class="stat reveal"><b data-stat="edible">36</b><span>edible</span></div>
+      <div class="stat reveal"><b data-stat="poisonous">27</b><span>poisonous</span></div>
+      <div class="stat reveal"><b data-stat="deadly">7</b><span>deadly</span></div>
+    </section>
+
+    <section class="band dark" id="mushrooms">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Mycology</p>
+          <h2><span data-stat-words="fungi">Sixty-three</span> fungi.<br>Know which is which.</h2>
+          <p class="sub"><b data-stat="edible">36</b> are good to eat. <b data-stat="poisonous">27</b> are look-alikes that will make you sick, and <b data-stat="deadly">7</b> of those can kill. Each one cooks, dries, burns and rots with its own look.</p>
+        </header>
+        <div class="tools reveal">
+          <div class="seg" role="group" aria-label="Filter mushrooms" id="fungi-filter"></div>
+          <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="fungi-search" type="search" placeholder="Search mushrooms" autocomplete="off" aria-label="Search mushrooms"></label>
+        </div>
+        <div class="grid cards" id="fungi-grid"></div>
+        <div class="legend reveal">
+          <div><i class="dot edible"></i><p><b>Edible.</b> Safe raw or cooked.</p></div>
+          <div><i class="dot cook"></i><p><b>Cook first.</b> Upsets the stomach raw.</p></div>
+          <div><i class="dot poison"></i><p><b>Poisonous.</b> Food poisoning; charcoal tablets help.</p></div>
+          <div><i class="dot deadly"></i><p><b>Deadly.</b> Organ damage that cooking doesn't stop. Only chelation tablets save you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band soft" id="setup">
+      <div class="wrap narrow">
+        <header class="head reveal">
+          <p class="eyebrow">For server owners</p>
+          <h2>Set up in minutes.</h2>
+          <p class="sub">Nothing replaces vanilla. The fungi join the vanilla events that scatter mushrooms on the forest floor, so you add only the species you want.</p>
+        </header>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="num">1</span>
+            <div>
+              <h3>Install the mod</h3>
+              <p>Subscribe on the Workshop, place <code>@gebsmushrooms</code> beside the server executable, copy its key into <code>keys/</code>, and load <code>-mod=@gebsmushrooms</code> on the server. Every player needs the mod too.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">2</span>
+            <div>
+              <h3>Give each fungus a type</h3>
+              <p>Give each fungus a <code>types.xml</code> entry like vanilla's <code>AgaricusMushroom</code>. Leave out the poisonous ones if you'd rather.</p>
+              <div class="code"><button class="copy" data-copy="fungi-types">Copy</button><pre><code id="fungi-types">&lt;type name="geb_Chanterelle"&gt;
+    &lt;nominal&gt;0&lt;/nominal&gt;
+    &lt;lifetime&gt;900&lt;/lifetime&gt;
+    &lt;restock&gt;0&lt;/restock&gt;
+    &lt;min&gt;0&lt;/min&gt;
+    &lt;quantmin&gt;-1&lt;/quantmin&gt;
+    &lt;quantmax&gt;-1&lt;/quantmax&gt;
+    &lt;cost&gt;100&lt;/cost&gt;
+    &lt;flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/&gt;
+    &lt;category name="food"/&gt;
+&lt;/type&gt;</code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">3</span>
+            <div>
+              <h3>Let them grow</h3>
+              <p>Add each one to the vanilla <code>Trajectory</code> events that scatter mushrooms on the forest floor around players. The list below already sorts them by the woods they grow in.</p>
+              <div class="code"><button class="copy" data-copy="fungi-events">Copy</button><pre><code id="fungi-events"></code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">4</span>
+            <div>
+              <h3>Test it</h3>
+              <p>Stop the server before editing and keep backups. Validate the XML, restart, and read the RPT and script logs. Values that suit Chernarus may not suit Sakhal, Livonia or a custom map.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="classnames">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Reference</p>
+          <h2>Every classname.</h2>
+          <p class="sub">All <b data-stat="classes">63</b> public classes, for spawning, trader lists and loot tables. Click a name to copy it.</p>
+        </header>
+        <div class="tools reveal">
+          <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="class-search" type="search" placeholder="Search classnames" autocomplete="off" aria-label="Search classnames"></label>
+          <label class="select"><span class="sr">Category</span><select id="class-filter"><option value="">All categories</option></select></label>
+          <span class="count" id="class-count"></span>
+        </div>
+        <div class="table reveal"><table><thead><tr><th>Classname</th><th>Name</th><th>Category</th></tr></thead><tbody id="class-body"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="band soft" id="faq">
+      <div class="wrap narrow">
+        <header class="head reveal"><p class="eyebrow">Help</p><h2>Questions.</h2></header>
+        <div class="faq reveal">
+          <details><summary>Which mushrooms are dangerous?</summary><p>Most of the poisonous ones cause food poisoning: vomiting, eased by charcoal tablets. The deadly ones damage the organs, and cooking doesn't help; only chelation tablets stop it. Several edible species, such as morels, must be cooked first. The Mushrooms section above marks every one.</p></details>
+          <details><summary>Where do they grow?</summary><p>On the forest floor near players, through the vanilla <code>Trajectory</code> events your server adds them to: conifer woods, broadleaf woods, or meadows and rich soil, depending on the species. Each one's details say where to look.</p></details>
+          <details><summary>Can I cook and keep them?</summary><p>Yes. Every fungus has its own baked, boiled, dried, burnt and rotten look, like vanilla's mushrooms. Dry the edible ones to keep them longer.</p></details>
+          <details><summary>Where did the animals and garden crops go?</summary><p>Geb's Mushrooms used to be part of Geb's Flora &amp; Fauna. It is now three mods, so servers can pick what they want: <a href="https://packjc.github.io/gebsanimals/">Geb's Animals</a> has the wildlife, and <a href="https://packjc.github.io/gebsplants/">Geb's Plants</a> has the garden crops and wild ginseng. The classnames haven't changed. If your server used the old mod, load all three to keep everything players already have.</p></details>
+          <details><summary>Does every player need the mod?</summary><p>Yes. It supplies the models, textures and item names.</p></details>
+          <details><summary>Can I put it in a server pack?</summary><p>No. Use the Workshop item, and a Steam Collection for your server's required mods.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <span class="brand"><span class="glyph" aria-hidden="true"></span><span>Geb's Mushrooms</span></span>
+        <nav aria-label="Elsewhere"><a href="https://steamcommunity.com/workshop/browse/?appid=221100&amp;searchtext=Geb%27s+Mushrooms">Steam Workshop</a><a href="https://github.com/PackJC/gebsmushrooms">GitHub</a><a href="https://discord.gg/G8uSGZ8yyf">Discord</a></nav>
+      </div>
+      <nav class="family" aria-label="More mods by Geb"><span>More by Geb:</span><a href="https://packjc.github.io/gebsanimals/">Geb's Animals</a><a href="https://packjc.github.io/gebsplants/">Geb's Plants</a><a href="https://packjc.github.io/gebsmushrooms/" aria-current="page">Geb's Mushrooms</a><a href="https://packjc.github.io/gebsfish/">Gebsfish</a></nav>
+      <p>A DayZ community mod by Geb / Cole. DayZ and Bohemia Interactive are trademarks of Bohemia Interactive. This project is not affiliated with or endorsed by Bohemia Interactive.</p>
+    </div>
+  </footer>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <button class="close" id="sheet-close" aria-label="Close">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg>
+    </button>
+    <div class="sheet-body" id="sheet-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+</body>
+</html>
