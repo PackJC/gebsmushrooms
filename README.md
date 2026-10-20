@@ -1,31 +1,37 @@
 <h1 align="center">
   <br>
-  <a href="https://packjc.github.io/gebsmushrooms/"><img src="docs/assets/banner.png" alt="Geb's Mushrooms" width="900"></a>
+  <img src=".github/logo.png" alt="Geb's Mushrooms" width="500"/>
   <br>
-  <a href="https://discord.gg/G8uSGZ8yyf"><img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Discord"></a>
-  <a href="https://steamcommunity.com/workshop/browse/?appid=221100&searchtext=Geb%27s+Mushrooms"><img src="https://img.shields.io/badge/Steam-Workshop-1b2838?style=for-the-badge&logo=steam&logoColor=white" alt="Geb's Mushrooms on the Steam Workshop"></a>
+  <a href="https://discord.gg/G8uSGZ8yyf" style="width:250"><img src="https://i.imgur.com/4IyA522.png" alt="Join Our Discord" width="250" style="margin-left:9%"/></a><img src="https://i.imgur.com/3rhti8A.gif" alt="Like & Favorite" width="500" style="margin-left:-10%"/>
   <br>
 </h1>
 
 <h3 align="center">Wild Fungi for DayZ</h3>
 
 <p align="center">
-  <a href="https://packjc.github.io/gebsmushrooms/"><img alt="Website" src="https://img.shields.io/badge/Website-Field%20Guide-7ed99a?style=for-the-badge"></a>
+  <img alt="Mod Version" src="https://img.shields.io/badge/Mod-v1.0.0-blue?style=for-the-badge">
+  <img alt="DayZ Version" src="https://img.shields.io/badge/DayZ-v1.30-teal?style=for-the-badge">
+  <a href="https://packjc.github.io/gebsmushrooms/"><img alt="Website" src="https://img.shields.io/badge/Website-Field%20Guide-c25e00?style=for-the-badge"></a>
 </p>
 
 <p align="center">
   <a href="https://packjc.github.io/gebsmushrooms/">Website</a> •
-  <a href="#information">Information</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#installation">Installation</a> •
   <a href="#main-classnames">Classnames</a> •
-  <a href="#support">Support</a> •
-  <a href="#license--terms">License & Terms</a>
+  <a href="#credits">Credits</a> •
+  <a href="#license">License & Terms</a> •
+  <a href='CHANGELOG.md'>Change Log</a>
 </p>
 
 ## Information
 
-Geb's Mushrooms adds 63 wild fungi to DayZ: 36 edible species and 27 poisonous look-alikes, each with its own model and its own baked, boiled, dried, burnt and rotten looks. They grow on the forest floor near players, through the vanilla events that scatter mushrooms.
+Geb's Mushrooms adds 63 wild fungi to DayZ: 36 edible species and 27 poisonous look-alikes, each with its own model and its own baked, boiled, dried, burnt and rotten looks.
+They grow on the forest floor near players, through the vanilla events that scatter mushrooms.
+
+## Requirements
+
+* DayZ 1.30. No other mods are needed: load Geb's Mushrooms on both the server and every client.
 
 ## Key Features
 
@@ -33,7 +39,21 @@ Geb's Mushrooms adds 63 wild fungi to DayZ: 36 edible species and 27 poisonous l
 * **27 poisonous look-alikes**: death cap, destroying angel, false morel, jack-o'-lantern, common earthball, sulphur tuft, deadly webcap, green-spored parasol, panther cap, funeral bell, the sickener, yellow stainer, ivory funnel, brown roll-rim, devil's bolete, deadly dapperling, deadly fibrecap, livid pinkgill, false death cap, early false morel, yellow knight, poison pie, clouded agaric, bitter bolete, ringed conecap, stinkhorn and scaly vase chanterelle.
 * **Real poisons**: poisonous species use DayZ's own illnesses. Most cause food poisoning (charcoal tablets help); the seven deadly ones cause heavy-metal-style organ damage that cooking doesn't prevent and only chelation tablets stop. Some edible species, like the morels, must be cooked first.
 * **Server-controlled by design**: the fungi join the vanilla `Trajectory` events, sorted by habitat. Add only the species you want, or leave out the poisonous ones.
-* **Localization**: a DayZ `stringtable.csv` for the supported interface languages.
+* Supported languages:
+  - English
+  - Czech
+  - German
+  - Russian
+  - Polish
+  - Hungarian
+  - Italian
+  - Spanish
+  - French
+  - Chinese (Traditional and Simplified)
+  - Japanese
+  - Portuguese
+  > **Note**
+  > Although supported languages are listed above, we cannot verify complete accuracy. If you are a native speaker and notice anything wrong, please reach out to us in the Discord via a ticket to assist us in getting proper translations.
 
 ## Installation
 
@@ -64,14 +84,36 @@ This mod is one of three that used to be **Geb's Flora & Fauna**. Each now stand
 
 The classnames are unchanged. A server that ran Geb's Flora & Fauna should load all three to keep every item players already have; leaving one out deletes its items from the server's storage at the next restart.
 
+## Credits
+
+- Geb, creator and author
+- The DayZ community for reporting bugs and inspiration throughout the life of the mod
+
+
 ## Support
 
-* [Discord](https://discord.gg/G8uSGZ8yyf)
-* [GitHub issues](https://github.com/PackJC/gebsmushrooms/issues)
-* [Steam Workshop](https://steamcommunity.com/workshop/browse/?appid=221100&searchtext=Geb%27s+Mushrooms)
+If you like this project and think it has improved your server in any way, consider contributing! We are always looking for help with ideas, new models, and any monetary support that can help improve the mod. Open a ticket in the [Discord](https://discord.gg/G8uSGZ8yyf) to discuss how you can contribute, or report a bug on [GitHub](https://github.com/PackJC/gebsmushrooms/issues).
 
-## License & Terms
 
-The Steam Workshop item is the authorized distribution source. Do not re-upload, repack, mirror, or include the mod in a server/mod pack. Use a Steam Collection to publish a server's required mod list. Refer to the Workshop page for the complete current terms.
+## License
 
-Copyright 2022–2026 Cole / PackJC.
+[Attribution-NonCommercial-NoDerivatives 4.0 International](https://github.com/PackJC/gebsmushrooms/blob/master/LICENSE)
+
+## Usage & Terms
+This item is NOT authorized (strictly forbidden) for any of these conditions:
+- posting on Steam, except under the Steam account Cole.
+- hosting on any download server other than Geb's Mushrooms current workshop download.
+- hosting on any launcher for distribution other than Geb's Mushrooms current workshop download.
+- to be packaged in any form other than Geb's Mushrooms current workshop download.
+- to create derivative works.
+
+## PERMISSION IS NOT GRANTED FOR THIS MOD TO BE INCLUDED IN A "SERVER PACK" or "MOD PACK" DO NOT EVEN ASK TO REPACK. NO. NOT ALLOWED.
+Use a Collection if you want to include this mod on your server for your users.
+
+## Monetization
+You are hereby given monetization approval under the conditions that you follow the DayZ Server Monetization agreement and have obtained permission from Bohemia. Read more here https://www.bohemia.net/monetization
+
+## Donations
+We accept donations at https://www.paypal.com/paypalme/packjc every dollar counts and we greatly appreciate any contributions!
+
+### Copyright © Smoky Mountain Software 2022-2026
