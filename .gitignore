@@ -18,3 +18,5 @@ __pycache__/
 # or a script folder called Tools is mod content and stays tracked.
 /tools/
 /Workbench/
+# Crash dumps from Git for Windows tools (grep.exe.stackdump and the like)
+*.stackdump

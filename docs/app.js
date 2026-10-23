@@ -142,14 +142,15 @@
   }
 
   // ---- mushrooms
-  const LEVELS = { "Edible": "edible", "Cook first": "cook", "Poisonous": "poison", "Deadly": "deadly" };
+  const LEVELS = { "Edible": "edible", "Cook first": "cook", "Boil only": "cook", "Poisonous": "poison", "Deadly": "deadly" };
   const levelBadge = f => h("span", { class: "badge lv-" + LEVELS[f.level], text: f.level });
   if ($("#fungi-grid") && D.fungi) {
     const poisonText = {
       "Edible": "Safe to eat raw, and better cooked.",
       "Cook first": "Edible once cooked; raw, it upsets the stomach.",
+      "Boil only": "Only as a tea: boiled, it's safe; raw, baked or dried, it upsets the stomach.",
       "Poisonous": "Causes food poisoning: vomiting and stomach pain. Charcoal tablets help.",
-      "Deadly": "Causes organ damage that cooking does not prevent, and can kill. Only chelation tablets stop it."
+      "Deadly": "Causes organ damage that can kill. Only chelation tablets stop it."
     };
     const fungusSheet = f => openSheet([
       h("div", { class: "gallery" }, img(f.img, f.name, { loading: "eager" })),

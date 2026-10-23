@@ -9,7 +9,7 @@
 <h3 align="center">Wild Fungi for DayZ</h3>
 
 <p align="center">
-  <img alt="Mod Version" src="https://img.shields.io/badge/Mod-v1.0.0-blue?style=for-the-badge">
+  <img alt="Mod Version" src="https://img.shields.io/badge/Mod-v1.0.1-blue?style=for-the-badge">
   <img alt="DayZ Version" src="https://img.shields.io/badge/DayZ-v1.30-teal?style=for-the-badge">
   <a href="https://packjc.github.io/gebsmushrooms/"><img alt="Website" src="https://img.shields.io/badge/Website-Field%20Guide-c25e00?style=for-the-badge"></a>
 </p>
@@ -27,7 +27,7 @@
 ## Information
 
 Geb's Mushrooms adds 63 wild fungi to DayZ: 36 edible species and 27 poisonous look-alikes, each with its own model and its own baked, boiled, dried, burnt and rotten looks.
-They grow on the forest floor near players, through the vanilla events that scatter mushrooms.
+They grow on the forest floor near players, through the vanilla events that scatter mushrooms. A field guide to all of them turns up as loot.
 
 ## Requirements
 
@@ -37,8 +37,15 @@ They grow on the forest floor near players, through the vanilla events that scat
 
 * **36 edible fungi**: black morel, white morel, lion's mane, giant puffball, chanterelle, chicken of the woods, hen of the woods, shaggy mane, hedgehog mushroom, honey mushroom, wood blewit, lobster mushroom, indigo milk cap, wine cap, velvet foot, beefsteak fungus, cauliflower mushroom, gem-studded puffball, bay bolete, orange birch bolete, old man of the woods, amethyst deceiver, fairy ring champignon, half-free morel, American Caesar, horse mushroom, St George's mushroom, dryad's saddle, bear's head tooth, matsutake, shaggy parasol, witch's butter, turkey tail, hemlock reishi, chaga and crown-tipped coral.
 * **27 poisonous look-alikes**: death cap, destroying angel, false morel, jack-o'-lantern, common earthball, sulphur tuft, deadly webcap, green-spored parasol, panther cap, funeral bell, the sickener, yellow stainer, ivory funnel, brown roll-rim, devil's bolete, deadly dapperling, deadly fibrecap, livid pinkgill, false death cap, early false morel, yellow knight, poison pie, clouded agaric, bitter bolete, ringed conecap, stinkhorn and scaly vase chanterelle.
-* **Real poisons**: poisonous species use DayZ's own illnesses. Most cause food poisoning (charcoal tablets help); the seven deadly ones cause heavy-metal-style organ damage that cooking doesn't prevent and only chelation tablets stop. Some edible species, like the morels, must be cooked first.
-* **Server-controlled by design**: the fungi join the vanilla `Trajectory` events, sorted by habitat. Add only the species you want, or leave out the poisonous ones.
+* **Real poisons**: poisonous species use DayZ's own illnesses. Most cause food poisoning (charcoal tablets help).
+  - The ten deadly ones cause heavy-metal-style organ damage. One whole mushroom is enough to kill, slowly, and only chelation tablets save you; a bite or two only makes you ill.
+  - Cooking, drying and rot don't help, except that boiling a false morel leaves only food poisoning.
+* **Cook first, boil only**: some edible species, like the morels, must be cooked first. Turkey tail, hemlock reishi and chaga are too tough to eat: boil them fresh for a tea. Dried, they burn in the pot like any dried food.
+* **Burnt is not safe**: burnt mushrooms upset the stomach, like vanilla's burnt food.
+* **Geb's Mushroom Field Guide**: a field guide to all 63 fungi, grouped by how safe they are to eat, printed on a folded map. Rare loot on the shelves of hunting spots and villages.
+* **Like vanilla's mushrooms**: held in vanilla's own hand poses, cooked on a fireplace, and the edible ones work as rabbit-snare bait.
+* **Server-controlled by design**: the fungi join the vanilla `Trajectory` events, sorted by habitat. You can add all 63, or only the 36 edible ones, which keeps poisonous fungi out and leaves vanilla's own mushrooms commoner.
+* **Ready-made economy files**: on start the server writes the types and both sets of event lines, sorted by habitat, to `$profile:Gebs/mpmissions/`, like Gebsfish. It rewrites them whenever they're out of date.
 * Supported languages:
   - English
   - Czech
@@ -57,11 +64,18 @@ They grow on the forest floor near players, through the vanilla events that scat
 
 ## Installation
 
-1. Subscribe to Geb's Mushrooms on the [Steam Workshop](https://steamcommunity.com/workshop/browse/?appid=221100&searchtext=Geb%27s+Mushrooms).
+1. Subscribe to Geb's Mushrooms on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3823626210).
 2. Install the published `@gebsmushrooms` folder beside the DayZ server executable.
 3. Copy the included `.bikey` into the server's `keys` folder.
 4. Add `-mod=@gebsmushrooms` to the server launch parameters. Every connecting player must load the same Workshop mod.
-5. Give each fungus a `types.xml` entry like vanilla's `AgaricusMushroom`, and add it to the vanilla `Trajectory` events for its habitat.
+5. Start the server once. The mod writes these files to `$profile:Gebs/mpmissions/`:
+   - `gebsmushrooms-types.xml` and `gebsmushrooms-cfgeconomycore.xml`: register the types with the `cfgeconomycore.xml` block.
+   - `gebsmushrooms-events-children.xml`: all 63 fungi, the poisonous ones included.
+   - `gebsmushrooms-events-children-edible.xml`: only the 36 edible fungi.
+
+   Pick one of the two events files and merge its `<child>` lines into the vanilla `Trajectory` events in `db/events.xml`; don't merge both. Every fungus you add takes a share of those events' spawns. All 63 crowd out vanilla's own mushrooms and add 27 poisonous species; the edible-only file adds fewer, so vanilla's mushrooms stay commoner and nothing new is poisonous.
+
+   The files are rewritten whenever they're out of date (a mod update that changes them, or a deleted file), so keep a copy of any edits.
 
 The [server-owner guide](https://packjc.github.io/gebsmushrooms/#setup) walks through every step, with copy-ready XML.
 
@@ -71,18 +85,23 @@ The [server-owner guide](https://packjc.github.io/gebsmushrooms/#setup) walks th
 | --- | --- |
 | Edible fungi | `geb_AmericanCaesar`, `geb_AmethystDeceiver`, `geb_BayBolete`, `geb_BearsHeadTooth`, `geb_BeefsteakFungus`, `geb_BlackMorel`, `geb_CauliflowerMushroom`, `geb_Chaga`, `geb_Chanterelle`, `geb_ChickenOfTheWoods`, `geb_CrownTippedCoral`, `geb_DryadsSaddle`, `geb_FairyRingChampignon`, `geb_GemPuffball`, `geb_PuffBall`, `geb_HalfFreeMorel`, `geb_HedgehogMushroom`, `geb_HemlockReishi`, `geb_HenOfTheWoods`, `geb_HoneyMushroom`, `geb_HorseMushroom`, `geb_IndigoMilkCap`, `geb_LionsMane`, `geb_LobsterMushroom`, `geb_Matsutake`, `geb_OldManOfTheWoods`, `geb_OrangeBirchBolete`, `geb_ShaggyMane`, `geb_ShaggyParasol`, `geb_StGeorgesMushroom`, `geb_TurkeyTail`, `geb_VelvetFoot`, `geb_WhiteMorel`, `geb_WineCap`, `geb_WitchsButter`, `geb_WoodBlewit` |
 | Poisonous fungi | `geb_BitterBolete`, `geb_BrownRollrim`, `geb_CloudedAgaric`, `geb_Earthball`, `geb_DeadlyDapperling`, `geb_DeadlyFibrecap`, `geb_DeadlyWebcap`, `geb_DeathCap`, `geb_DestroyingAngel`, `geb_DevilsBolete`, `geb_EarlyFalseMorel`, `geb_FalseDeathCap`, `geb_FalseMorel`, `geb_FuneralBell`, `geb_GreenSporedParasol`, `geb_IvoryFunnel`, `geb_JackOLantern`, `geb_LividPinkgill`, `geb_PantherCap`, `geb_PoisonPie`, `geb_ConocybeFilaris`, `geb_ScalyVase`, `geb_Stinkhorn`, `geb_SulphurTuft`, `geb_EmeticRussula`, `geb_YellowKnight`, `geb_YellowStainer` |
+| Field guide | `geb_MushroomGuide` |
 
-The complete searchable list of 63 public config classes is on the [project website](https://packjc.github.io/gebsmushrooms/#classnames).
+The complete searchable list of 64 public config classes is on the [project website](https://packjc.github.io/gebsmushrooms/#classnames).
 
 ## The Geb's family
 
-This mod is one of three that used to be **Geb's Flora & Fauna**. Each now stands alone, so a server can run the ones it wants:
+Every mod by Geb stands on its own, so a server can run the ones it wants:
 
+* [Gebsfish](https://github.com/PackJC/gebsfish) ([wiki](https://packjc.github.io/gebsfish/)): the fishing overhaul, with 94 catchable species, rods, lures, coolers, the jon boat and more
 * [Geb's Animals](https://github.com/PackJC/gebsanimals) ([website](https://packjc.github.io/gebsanimals/)): 15 wildlife species
-* [Geb's Plants](https://github.com/PackJC/gebsplants) ([website](https://packjc.github.io/gebsplants/)): 27 garden crops and wild ginseng
-* [Geb's Mushrooms](https://github.com/PackJC/gebsmushrooms) ([website](https://packjc.github.io/gebsmushrooms/)): 63 edible and poisonous fungi
+* [Geb's Plants](https://github.com/PackJC/gebsplants) ([website](https://packjc.github.io/gebsplants/)): 27 garden crops including wild ginseng
+* [Geb's Mushrooms](https://github.com/PackJC/gebsmushrooms) ([website](https://packjc.github.io/gebsmushrooms/)) (this mod): 63 edible and poisonous fungi
+* [Alien Invasion](https://github.com/PackJC/alieninvasion) ([website](https://packjc.github.io/alieninvasion/)): UFO crash sites, Little Green Men and the Montauk plasma rifle
+* [Thanksgiving](https://steamcommunity.com/sharedfiles/filedetails/?id=2886269800) (Workshop): Pilgrim clothes, turkeys and a flintlock musket for the holiday
+* [Great Smoky Mountains](https://github.com/PackJC/greatsmokymountains) ([Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2812533524)): a 20 x 20 km map of the Smokies at real scale
 
-The classnames are unchanged. A server that ran Geb's Flora & Fauna should load all three to keep every item players already have; leaving one out deletes its items from the server's storage at the next restart.
+Geb's Animals, Plants and Mushrooms used to be one mod, **Geb's Flora & Fauna**. The classnames are unchanged: a server that ran it should load all three to keep every item players already have, because leaving one out deletes its items from the server's storage at the next restart.
 
 ## Credits
 

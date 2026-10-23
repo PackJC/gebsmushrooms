@@ -8,6 +8,7 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"DZ_Data",
+			"DZ_Scripts",
 			"DZ_Gear_Food"
 		};
 	};
@@ -27,12 +28,47 @@ class CfgMods
 		// Without this the engine looks for gebsmushrooms/Anims/cfg/skeletons.anim.xml
 		// and logs "ANIMATION (E): Can't load ..." on every start; point it at vanilla's.
 		skeletonDefinitions="DZ/anims/cfg/skeletons.anim.xml";
-		credits="DayZ Modding Community";
+		credits="Geb";
 		author="Geb";
 		authorID="0";
-		version="1.0.0";
+		version="1.0.1";
 		extra=0;
 		type="mod";
-		// Config only: no scripts, so no script modules or dependencies.
+		// Scripts: the Central Economy files written on server start (scripts/3_game, 5_mission), the
+		// mushroom field guide's own textures and name, the deadly fungi's poison and the fungi's hand poses
+		// (scripts/4_world).
+		dependencies[]=
+		{
+			"Game",
+			"World",
+			"Mission"
+		};
+		class defs
+		{
+			class gameScriptModule
+			{
+				value="";
+				files[]=
+				{
+					"gebsmushrooms/scripts/3_game"
+				};
+			};
+			class worldScriptModule
+			{
+				value="";
+				files[]=
+				{
+					"gebsmushrooms/scripts/4_world"
+				};
+			};
+			class missionScriptModule
+			{
+				value="";
+				files[]=
+				{
+					"gebsmushrooms/scripts/5_mission"
+				};
+			};
+		};
 	};
 };

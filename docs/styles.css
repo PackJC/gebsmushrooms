@@ -307,6 +307,8 @@ b { font-weight: 600; }
 .foot nav { display: flex; gap: 22px; }
 .foot nav a { color: var(--muted); font-size: 13px; }
 .foot p { margin: 0; max-width: 760px; }
+.foot p + p { margin-top: 10px; }
+.foot p a { color: var(--muted); }
 .foot .family { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin: 0 0 16px; }
 .foot .family span { color: var(--faint); }
 .foot .family a { color: var(--muted); font-size: 13px; }
