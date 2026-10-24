@@ -1,7 +1,7 @@
 // Writes Geb's Mushrooms' Central Economy files into $profile:Gebs/mpmissions/ on server start, next to Gebsfish's.
-// Each file's second line is "<!-- Version: x rN -->": the mod version and TYPES_REVISION_GEBSMUSHROOMS (constants.c).
-// A file is rewritten when it is missing or its stamp differs, so admin edits survive restarts until the mod's files
-// change; bump the revision whenever this generator's output changes, even within a version.
+// Each file's second line is "<!-- Version: x -->", the mod version (constants.c). As in Gebsfish, a file is rewritten
+// only when it is missing or that version differs, so admin edits survive restarts until the version changes; bump
+// VERSION_GEBSMUSHROOMS whenever this generator's output changes.
 //
 // Server owners copy gebsmushrooms-types.xml into mpmissions/<mission>/gebsmushrooms/ and register it with the block in
 // gebsmushrooms-cfgeconomycore.xml. The fungi grow through the vanilla Trajectory events by habitat, so their <child>
@@ -40,7 +40,7 @@ class geb_GebsMushroomsFiles
 			return;
 
 		FPrintln(file, "<types>");
-		FPrintln(file, "    <!-- All 63 fungi (they grow through the vanilla Trajectory events, like vanilla mushrooms) -->");
+		FPrintln(file, "    <!-- All 69 fungi (they grow through the vanilla Trajectory events, like vanilla mushrooms) -->");
 		WriteTypeList(file, GetFungi(), 0, 900, 0, true, "food", "");
 		FPrintln(file, "    <!-- Geb's Mushroom Field Guide: a field guide on vanilla's folded map, rare on the shelves of hunting spots and villages (vanilla's map is 50 in hunting and office spots) -->");
 		WriteType(file, "geb_MushroomGuide", 6, 14400, 3, false, "tools", "Hunting,Village", "shelves");
@@ -54,7 +54,7 @@ class geb_GebsMushroomsFiles
 	protected void WriteEventChildren()
 	{
 		string name = "gebsmushrooms-events-children.xml";
-		FileHandle file = BeginFile(name, "All 63 fungi, the poisonous ones included. Merge each event's <child> lines into the <children> of the vanilla event of the same name in db/events.xml, leaving out any species you don't want. For edible species only, merge gebsmushrooms-events-children-edible.xml instead (use one file, not both).");
+		FileHandle file = BeginFile(name, "All 69 fungi, the poisonous and psychedelic ones included. Merge each event's <child> lines into the <children> of the vanilla event of the same name in db/events.xml, leaving out any species you don't want. For edible species only, merge gebsmushrooms-events-children-edible.xml instead (use one file, not both).");
 		if ( !file )
 			return;
 
@@ -82,11 +82,11 @@ class geb_GebsMushroomsFiles
 		EndFile(file, name);
 	}
 
-	// The same, edible species only: no poisonous fungi join the mushrooms, and vanilla's own stay commoner.
+	// The same, edible species only: no poisonous or psychedelic fungi join the mushrooms, and vanilla's own stay commoner.
 	protected void WriteEdibleEventChildren()
 	{
 		string name = "gebsmushrooms-events-children-edible.xml";
-		FileHandle file = BeginFile(name, "The 36 edible fungi only, in place of gebsmushrooms-events-children.xml (use one file, not both): no poisonous fungi join the vanilla mushrooms, and fewer new species crowd them out. Merge each event's <child> lines into the <children> of the vanilla event of the same name in db/events.xml.");
+		FileHandle file = BeginFile(name, "The 37 edible fungi only, in place of gebsmushrooms-events-children.xml (use one file, not both): no poisonous or psychedelic fungi join the vanilla mushrooms, and fewer new species crowd them out. Merge each event's <child> lines into the <children> of the vanilla event of the same name in db/events.xml.");
 		if ( !file )
 			return;
 
@@ -138,8 +138,10 @@ class geb_GebsMushroomsFiles
 			"geb_AmericanCaesar", "geb_HorseMushroom", "geb_StGeorgesMushroom", "geb_DryadsSaddle",
 			"geb_BearsHeadTooth", "geb_Matsutake", "geb_ShaggyParasol", "geb_WitchsButter",
 			"geb_TurkeyTail", "geb_HemlockReishi", "geb_Chaga", "geb_CrownTippedCoral",
-			"geb_YellowKnight", "geb_PoisonPie", "geb_CloudedAgaric", "geb_BitterBolete",
-			"geb_ConocybeFilaris", "geb_Stinkhorn", "geb_ScalyVase"
+			"geb_Cordyceps", "geb_YellowKnight", "geb_PoisonPie", "geb_CloudedAgaric",
+			"geb_BitterBolete", "geb_ConocybeFilaris", "geb_Stinkhorn", "geb_ScalyVase",
+			"geb_GoldenTeacher", "geb_WavyCap", "geb_BlueMeanie", "geb_Ovoid",
+			"geb_LaughingGym"
 		};
 		return names;
 	}
@@ -168,7 +170,8 @@ class geb_GebsMushroomsFiles
 			"geb_BrownRollrim", "geb_DevilsBolete", "geb_DeadlyFibrecap", "geb_LividPinkgill",
 			"geb_EarlyFalseMorel", "geb_AmericanCaesar", "geb_DryadsSaddle", "geb_BearsHeadTooth",
 			"geb_WitchsButter", "geb_TurkeyTail", "geb_Chaga", "geb_CrownTippedCoral",
-			"geb_PoisonPie", "geb_Stinkhorn"
+			"geb_Cordyceps", "geb_PoisonPie", "geb_Stinkhorn", "geb_WavyCap",
+			"geb_Ovoid", "geb_LaughingGym"
 		};
 		return names;
 	}
@@ -180,7 +183,7 @@ class geb_GebsMushroomsFiles
 			"geb_PuffBall", "geb_ShaggyMane", "geb_WineCap", "geb_GemPuffball",
 			"geb_FairyRingChampignon", "geb_Earthball", "geb_GreenSporedParasol", "geb_YellowStainer",
 			"geb_IvoryFunnel", "geb_DeadlyDapperling", "geb_HorseMushroom", "geb_StGeorgesMushroom",
-			"geb_ShaggyParasol", "geb_ConocybeFilaris"
+			"geb_ShaggyParasol", "geb_ConocybeFilaris", "geb_GoldenTeacher", "geb_BlueMeanie"
 		};
 		return names;
 	}
@@ -203,7 +206,8 @@ class geb_GebsMushroomsFiles
 			"geb_HoneyMushroom", "geb_WoodBlewit", "geb_IndigoMilkCap", "geb_VelvetFoot",
 			"geb_BeefsteakFungus", "geb_OrangeBirchBolete", "geb_OldManOfTheWoods", "geb_AmethystDeceiver",
 			"geb_HalfFreeMorel", "geb_AmericanCaesar", "geb_DryadsSaddle", "geb_BearsHeadTooth",
-			"geb_WitchsButter", "geb_TurkeyTail", "geb_Chaga", "geb_CrownTippedCoral"
+			"geb_WitchsButter", "geb_TurkeyTail", "geb_Chaga", "geb_CrownTippedCoral",
+			"geb_Cordyceps"
 		};
 		return names;
 	}
@@ -280,10 +284,10 @@ class geb_GebsMushroomsFiles
 		return found == FileStamp();
 	}
 
-	// "1.0.1 r1": the mod version and the generated files' revision
+	// "2.0.0": the mod version
 	protected string FileStamp()
 	{
-		return VERSION_GEBSMUSHROOMS + " r" + TYPES_REVISION_GEBSMUSHROOMS.ToString();
+		return VERSION_GEBSMUSHROOMS;
 	}
 
 	// One <type> per class in the list, all with the same numbers.

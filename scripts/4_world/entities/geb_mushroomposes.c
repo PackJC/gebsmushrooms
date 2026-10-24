@@ -22,6 +22,9 @@ modded class ModItemRegisterCallbacks
 		pType.AddItemInHandsProfileIK("geb_YellowKnight", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
 		pType.AddItemInHandsProfileIK("geb_PoisonPie", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
 		pType.AddItemInHandsProfileIK("geb_CloudedAgaric", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
+		pType.AddItemInHandsProfileIK("geb_WavyCap", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
+		pType.AddItemInHandsProfileIK("geb_Ovoid", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
+		pType.AddItemInHandsProfileIK("geb_LaughingGym", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_agaricus.anm");
 		// like vanilla's AmanitaMushroom
 		pType.AddItemInHandsProfileIK("geb_ShaggyMane", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
 		pType.AddItemInHandsProfileIK("geb_AmericanCaesar", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
@@ -30,6 +33,7 @@ modded class ModItemRegisterCallbacks
 		pType.AddItemInHandsProfileIK("geb_PantherCap", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
 		pType.AddItemInHandsProfileIK("geb_FalseDeathCap", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
 		pType.AddItemInHandsProfileIK("geb_Stinkhorn", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
+		pType.AddItemInHandsProfileIK("geb_GoldenTeacher", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_amanita.anm");
 		// like vanilla's BoletusMushroom
 		pType.AddItemInHandsProfileIK("geb_BlackMorel", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/Mushroom_boletus.anm");
 		pType.AddItemInHandsProfileIK("geb_WhiteMorel", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/Mushroom_boletus.anm");
@@ -61,6 +65,8 @@ modded class ModItemRegisterCallbacks
 		pType.AddItemInHandsProfileIK("geb_FuneralBell", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_psilocybe.anm");
 		pType.AddItemInHandsProfileIK("geb_DeadlyDapperling", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_psilocybe.anm");
 		pType.AddItemInHandsProfileIK("geb_ConocybeFilaris", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_psilocybe.anm");
+		pType.AddItemInHandsProfileIK("geb_Cordyceps", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_psilocybe.anm");
+		pType.AddItemInHandsProfileIK("geb_BlueMeanie", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_psilocybe.anm");
 		// like vanilla's AuriculariaMushroom
 		pType.AddItemInHandsProfileIK("geb_WitchsButter", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_auricularia.anm");
 		pType.AddItemInHandsProfileIK("geb_TurkeyTail", "dz/anims/workspaces/player/player_main/player_main_1h.asi", pBehavior, "dz/anims/anm/player/ik/gear/mushroom_auricularia.anm");

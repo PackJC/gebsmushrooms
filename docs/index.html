@@ -9,9 +9,9 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <title>Geb's Mushrooms</title>
-  <meta name="description" content="Geb's Mushrooms for DayZ: 63 wild fungi, 36 edible and 27 poisonous look-alikes, and a complete server setup guide.">
+  <meta name="description" content="Geb's Mushrooms for DayZ: 69 wild fungi, 37 edible, 27 poisonous look-alikes and 5 psychedelic, and a complete server setup guide.">
   <meta property="og:title" content="Geb's Mushrooms for DayZ">
-  <meta property="og:description" content="Sixty-three wild fungi for DayZ servers. Know which is which: some feed you, some make you sick, and some kill.">
+  <meta property="og:description" content="Sixty-nine wild fungi for DayZ servers. Know which is which: some feed you, some make you sick, some kill, and a few take you on a trip.">
   <meta property="og:url" content="https://packjc.github.io/gebsmushrooms/">
   <meta property="og:image" content="https://raw.githubusercontent.com/PackJC/gebsmushrooms/master/docs/assets/banner.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -46,7 +46,7 @@
     <section class="hero">
       <p class="eyebrow rise">A DayZ mod by Geb</p>
       <h1 class="rise">Mushrooms.</h1>
-      <p class="lede rise">Forage with care. <b data-stat="fungi">63</b> wild fungi grow on the forest floor: <b data-stat="edible">36</b> make a good meal, and <b data-stat="poisonous">27</b> look-alikes will make you sick, or worse.</p>
+      <p class="lede rise">Forage with care. <b data-stat="fungi">69</b> wild fungi grow on the forest floor: <b data-stat="edible">37</b> make a good meal, <b data-stat="poisonous">27</b> look-alikes will make you sick, or worse, and <b data-stat="psychedelic">5</b> will take you on a trip.</p>
       <div class="cta rise">
         <a class="pill" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3823626210">Find it on Steam</a>
         <a class="link-arrow" href="#setup">Set up your server</a>
@@ -63,18 +63,19 @@
     </section>
 
     <section class="stats" aria-label="At a glance">
-      <div class="stat reveal"><b data-stat="fungi">63</b><span>wild fungi</span></div>
-      <div class="stat reveal"><b data-stat="edible">36</b><span>edible</span></div>
+      <div class="stat reveal"><b data-stat="fungi">69</b><span>wild fungi</span></div>
+      <div class="stat reveal"><b data-stat="edible">37</b><span>edible</span></div>
       <div class="stat reveal"><b data-stat="poisonous">27</b><span>poisonous</span></div>
       <div class="stat reveal"><b data-stat="deadly">10</b><span>deadly</span></div>
+      <div class="stat reveal"><b data-stat="psychedelic">5</b><span>psychedelic</span></div>
     </section>
 
     <section class="band dark" id="mushrooms">
       <div class="wrap">
         <header class="head reveal">
           <p class="eyebrow">Mycology</p>
-          <h2><span data-stat-words="fungi">Sixty-three</span> fungi.<br>Know which is which.</h2>
-          <p class="sub"><b data-stat="edible">36</b> are good to eat. <b data-stat="poisonous">27</b> are look-alikes that will make you sick, and <b data-stat="deadly">10</b> of those kill: one whole mushroom is enough. Each one cooks, dries, burns and rots with its own look.</p>
+          <h2><span data-stat-words="fungi">Sixty-nine</span> fungi.<br>Know which is which.</h2>
+          <p class="sub"><b data-stat="edible">37</b> are good to eat. <b data-stat="poisonous">27</b> are look-alikes that will make you sick, and <b data-stat="deadly">10</b> of those kill: one whole mushroom is enough. <b data-stat="psychedelic">5</b> more are psychedelic: no meal, but a trip. Each one cooks, dries, burns and rots with its own look.</p>
         </header>
         <div class="tools reveal">
           <div class="seg" role="group" aria-label="Filter mushrooms" id="fungi-filter"></div>
@@ -86,6 +87,7 @@
           <div><i class="dot cook"></i><p><b>Cook first.</b> Upsets the stomach raw. <b>Boil only:</b> the woody brackets, safe only boiled fresh into a tea; dried, they burn in the pot like any dried food.</p></div>
           <div><i class="dot poison"></i><p><b>Poisonous.</b> Food poisoning; charcoal tablets help.</p></div>
           <div><i class="dot deadly"></i><p><b>Deadly.</b> Organ damage that kills, slowly: one whole mushroom is enough, cooked or not. Only chelation tablets save you.</p></div>
+          <div><i class="dot trip"></i><p><b>Psychedelic.</b> Not food: a trip of up to an hour, the colours drifting and the view swaying.</p></div>
         </div>
       </div>
     </section>
@@ -109,7 +111,7 @@
             <span class="num">2</span>
             <div>
               <h3>Start the server once</h3>
-              <p>The mod writes <code>gebsmushrooms-types.xml</code>, <code>gebsmushrooms-cfgeconomycore.xml</code> and two events files, <code>gebsmushrooms-events-children.xml</code> (all 63 fungi) and <code>gebsmushrooms-events-children-edible.xml</code> (the 36 edible ones), into <code>$profile:Gebs/mpmissions/</code>, beside Gebsfish's. Each file is stamped with the mod's version and a revision, and rewritten only when it's out of date: after an update that changes it, or when you delete it. Your edits stay put until then, so keep a copy of them.</p>
+              <p>The mod writes <code>gebsmushrooms-types.xml</code>, <code>gebsmushrooms-cfgeconomycore.xml</code> and two events files, <code>gebsmushrooms-events-children.xml</code> (all <span data-stat="fungi">69</span> fungi) and <code>gebsmushrooms-events-children-edible.xml</code> (the <span data-stat="edible">37</span> edible ones), into <code>$profile:Gebs/mpmissions/</code>, beside Gebsfish's. Each file is stamped with the mod's version and rewritten only when that version changes, or when you delete it. Your edits stay put until then, so keep a copy of them.</p>
             </div>
           </li>
           <li class="reveal">
@@ -127,12 +129,25 @@
             <div>
               <h3>Let them grow</h3>
               <p>Pick one events file and merge its <code>&lt;child&gt;</code> lines into the vanilla <code>Trajectory</code> events in <code>db/events.xml</code>; don't merge both. They're already sorted by the woods each fungus grows in.</p>
-              <p>Every fungus you add takes a share of those events' spawns. <code>gebsmushrooms-events-children.xml</code> adds all 63: vanilla's own mushrooms get much rarer and 27 poisonous species join them. <code>gebsmushrooms-events-children-edible.xml</code> adds only the 36 edible ones, so vanilla's mushrooms stay commoner and nothing new is poisonous. The lines below are the full set, with the poisonous and deadly ones marked.</p>
+              <p>Every fungus you add takes a share of those events' spawns. <code>gebsmushrooms-events-children.xml</code> adds all <span data-stat="fungi">69</span>: vanilla's own mushrooms get much rarer, and <span data-stat="poisonous">27</span> poisonous and <span data-stat="psychedelic">5</span> psychedelic species join them. <code>gebsmushrooms-events-children-edible.xml</code> adds only the <span data-stat="edible">37</span> edible ones, so vanilla's mushrooms stay commoner and nothing new is poisonous or psychedelic. The lines below are the full set, with the poisonous, deadly and psychedelic ones marked.</p>
               <div class="code"><button class="copy" data-copy="fungi-events">Copy</button><pre><code id="fungi-events"></code></pre></div>
             </div>
           </li>
           <li class="reveal">
             <span class="num">5</span>
+            <div>
+              <h3>Tune the trips (optional)</h3>
+              <p>The first start also writes <code>$profile:Gebs/gebsmushrooms.json</code> and never overwrites your edits; every setting has an <code>...Info</code> line beside it that explains it, as in Gebsfish's configs. <code>TripsEnabled</code> 0 turns the psychedelic fungi into plain, poor food. <code>TripStrengthCap</code> (0 to 1) caps how strong a trip gets, and <code>TripLengthScale</code> (0.25 to 3) stretches or shortens every trip. A trip pauses while its player is logged out and carries on when they're back; <code>EndTripOnLogout</code> 1 ends it at logout instead. Restart the server after an edit.</p>
+              <div class="code"><button class="copy" data-copy="trip-code">Copy</button><pre><code id="trip-code">{
+    "TripsEnabled": 1,
+    "TripStrengthCap": 1.0,
+    "TripLengthScale": 1.0,
+    "EndTripOnLogout": 0
+}</code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">6</span>
             <div>
               <h3>Test it</h3>
               <p>Stop the server before editing and keep backups. Validate the XML, restart, and read the RPT and script logs. Values that suit Chernarus may not suit Sakhal, Livonia or a custom map.</p>
@@ -147,7 +162,7 @@
         <header class="head reveal">
           <p class="eyebrow">Reference</p>
           <h2>Every classname.</h2>
-          <p class="sub">All <b data-stat="classes">64</b> public classes, the fungi and the field guide, for spawning, trader lists and loot tables. Click a name to copy it.</p>
+          <p class="sub">All <b data-stat="classes">70</b> public classes, the fungi and the field guide, for spawning, trader lists and loot tables. Click a name to copy it.</p>
         </header>
         <div class="tools reveal">
           <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="class-search" type="search" placeholder="Search classnames" autocomplete="off" aria-label="Search classnames"></label>
@@ -163,9 +178,10 @@
         <header class="head reveal"><p class="eyebrow">Help</p><h2>Questions.</h2></header>
         <div class="faq reveal">
           <details><summary>Which mushrooms are dangerous?</summary><p>Most of the poisonous ones cause food poisoning: vomiting, eased by charcoal tablets. The deadly ones damage the organs: one whole mushroom is enough to kill you over the next couple of hours, and only chelation tablets save you. A bite or two only makes you ill. Cooking, drying and rot don't help, except that boiling a false morel leaves only food poisoning. Several edible species, such as morels, must be cooked first, and anything burnt upsets the stomach. The Mushrooms section above marks every one.</p></details>
+          <details><summary>What do the psychedelic mushrooms do?</summary><p>They aren't food. Eating one starts a trip that only you see: after a few minutes the colours start to drift, the edges of the view darken, and the view breathes, sways and doubles as it swims in waves, drifting out of focus and back. Now and then you laugh at nothing. Very rarely you scream, and the view goes red and wild for a few seconds. A strong one can also turn your stomach on the way up. One whole mushroom lasts from about twenty minutes (the big laughing gym) to an hour (the blue meanie); more make it stronger, then longer. Rotten ones are weaker and burnt ones weaker still. The trip pauses while you're logged out and carries on when you come back. Dying ends it.</p></details>
           <details><summary>Where do they grow?</summary><p>On the forest floor near players, through the vanilla <code>Trajectory</code> events your server adds them to: conifer woods, broadleaf woods, or meadows and rich soil, depending on the species. Each one's details say where to look.</p></details>
           <details><summary>Can I cook and keep them?</summary><p>Yes. Every fungus has its own baked, boiled, dried, burnt and rotten look, like vanilla's mushrooms, and cooks on a fireplace the same way. Dry the edible ones to keep them longer, but boil the tea fungi (turkey tail, hemlock reishi and chaga) fresh: dried food burns in the pot. The edible ones also bait a rabbit snare.</p></details>
-          <details><summary>Is there a field guide in game?</summary><p>Yes: Geb's Mushroom Field Guide, a field guide to all 63 fungi, grouped by how safe they are to eat, printed on a folded map. Look for it on the shelves of hunting spots and villages.</p></details>
+          <details><summary>Is there a field guide in game?</summary><p>Yes: Geb's Mushroom Field Guide, a field guide to all <span data-stat="fungi">69</span> fungi, grouped by how safe they are to eat, printed on a folded map. Look for it on the shelves of hunting spots and villages.</p></details>
           <details><summary>Where did the animals and garden crops go?</summary><p>Geb's Mushrooms used to be part of Geb's Flora &amp; Fauna. It is now three mods, so servers can pick what they want: <a href="https://packjc.github.io/gebsanimals/">Geb's Animals</a> has the wildlife, and <a href="https://packjc.github.io/gebsplants/">Geb's Plants</a> has the garden crops and wild ginseng. The classnames haven't changed. If your server used the old mod, load all three to keep everything players already have.</p></details>
           <details><summary>Does every player need the mod?</summary><p>Yes. It supplies the models, textures and item names.</p></details>
           <details><summary>Can I put it in a server pack?</summary><p>No. Use the Workshop item, and a Steam Collection for your server's required mods.</p></details>

@@ -1,6 +1,6 @@
 // Unfolding Geb's Mushroom Field Guide runs vanilla's ActionUnfoldMap, which opens MENU_MAP. While the player holds an
-// unfolded guide, that menu is geb_MushroomGuideMenu (an empty stand-in, so the player sees the unfolded sheet in their
-// hands) instead of the map screen; every other map, and the map shortcut key, open as before.
+// unfolded guide, that menu is geb_MushroomGuideMenu (the guide as a page, the way the map screen shows the map) instead
+// of the map screen; every other map, and the map shortcut key, open as before.
 modded class MissionGameplay
 {
 	override UIScriptedMenu CreateScriptedMenu(int id)

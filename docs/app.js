@@ -142,7 +142,8 @@
   }
 
   // ---- mushrooms
-  const LEVELS = { "Edible": "edible", "Cook first": "cook", "Boil only": "cook", "Poisonous": "poison", "Deadly": "deadly" };
+  const LEVELS = { "Edible": "edible", "Cook first": "cook", "Boil only": "cook", "Poisonous": "poison", "Deadly": "deadly",
+    "Psychedelic": "trip" };
   const levelBadge = f => h("span", { class: "badge lv-" + LEVELS[f.level], text: f.level });
   if ($("#fungi-grid") && D.fungi) {
     const poisonText = {
@@ -150,18 +151,22 @@
       "Cook first": "Edible once cooked; raw, it upsets the stomach.",
       "Boil only": "Only as a tea: boiled, it's safe; raw, baked or dried, it upsets the stomach.",
       "Poisonous": "Causes food poisoning: vomiting and stomach pain. Charcoal tablets help.",
-      "Deadly": "Causes organ damage that can kill. Only chelation tablets stop it."
+      "Deadly": "Causes organ damage that can kill. Only chelation tablets stop it.",
+      "Psychedelic": "Not food: it starts a trip. Colours drift, the view breathes and doubles, and fits of laughter come and go."
     };
+    const effect = f => f.minutes ? poisonText[f.level] + " One whole mushroom lasts about " + f.minutes +
+      " minutes; more make it stronger, then longer." : poisonText[f.level];
+    const kicker = f => f.edible ? "Edible fungus" : f.level === "Psychedelic" ? "Psychedelic fungus" : "Poisonous fungus";
     const fungusSheet = f => openSheet([
       h("div", { class: "gallery" }, img(f.img, f.name, { loading: "eager" })),
       h("div", { class: "text" },
-        h("p", { class: "kicker lv-" + LEVELS[f.level], text: f.edible ? "Edible fungus" : "Poisonous fungus" }),
+        h("p", { class: "kicker lv-" + LEVELS[f.level], text: kicker(f) }),
         h("h2", { id: "sheet-title", text: f.name }),
         h("p", { class: "latin", text: f.latin }),
         levelBadge(f),
         h("p", { class: "desc", text: f.desc }),
         h("dl", {},
-          h("dt", { text: "Effect" }), h("dd", { text: poisonText[f.level] }),
+          h("dt", { text: "Effect" }), h("dd", { text: effect(f) }),
           h("dt", { text: "Habitat" }), h("dd", { text: f.habitat }),
           h("dt", { text: "Classname" }), h("dd", {}, clsButton(f.cls))))
     ]);

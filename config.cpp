@@ -22,7 +22,7 @@ class CfgMods
 		logoSmall="gebsmushrooms\data\logo.paa";			// icon next to mod name when description is not expanded
 		logo="gebsmushrooms\data\logo.paa";				// logo below game menu
 		logoOver="gebsmushrooms\data\logo_hover.paa";	// logo hovered (CfgMods reads logoOver, as mod.cpp does)
-		overview="Geb's Mushrooms: 63 edible and poisonous fungi for DayZ";	// keep in step with mod.cpp's overview
+		overview="Geb's Mushrooms: 69 edible, poisonous and psychedelic fungi for DayZ";	// keep in step with mod.cpp's overview
 		action="";
 		name="Geb's Mushrooms";
 		// Without this the engine looks for gebsmushrooms/Anims/cfg/skeletons.anim.xml
@@ -31,12 +31,14 @@ class CfgMods
 		credits="Geb";
 		author="Geb";
 		authorID="0";
-		version="1.0.1";
+		version="2.0.0";
 		extra=0;
 		type="mod";
 		// Scripts: the Central Economy files written on server start (scripts/3_game, 5_mission), the
 		// mushroom field guide's own textures and name, the deadly fungi's poison and the fungi's hand poses
-		// (scripts/4_world).
+		// (scripts/4_world), and the psychedelic fungi's trips: what one is and the server settings
+		// (scripts/3_game/trip), eating and keeping one (4_world/entities/geb_trip.c), and logout and the
+		// screen effect each frame (5_mission/mission/geb_TripMission.c).
 		dependencies[]=
 		{
 			"Game",

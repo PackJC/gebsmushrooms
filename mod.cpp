@@ -1,10 +1,10 @@
 name = "Geb's Mushrooms";
 dir = "gebsmushrooms";
-overview = "Geb's Mushrooms: 63 edible and poisonous fungi for DayZ";
+overview = "Geb's Mushrooms: 69 edible, poisonous and psychedelic fungi for DayZ";
 credits = "Geb";
 author = "Geb";
 authorID = "0";
-version = "1.0.1";
+version = "2.0.0";
 picture = "gebsmushrooms/data/logo.paa";				// picture in expanded description
 logoSmall = "gebsmushrooms/data/logo.paa";				// icon next to mod name when description is not expanded
 logo = "gebsmushrooms/data/logo.paa";					// logo below game menu
