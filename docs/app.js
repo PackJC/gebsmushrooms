@@ -193,7 +193,9 @@
     const cropSheet = c => {
       const thumbs = [[c.pack_img, "Seed packet"], [c.plant_img, "Ripe plant"], [c.img, c.name]];
       if (c.slice) thumbs.push([c.slice.img, c.slice.name]);
-      const classes = [[c.cls, c.name], c.slice ? [c.slice.cls, c.slice.name] : null, [c.seeds_cls, "Seeds"], [c.pack_cls, "Seed packet"],
+      (c.extras || []).forEach(e => thumbs.push([e.img, e.name]));
+      const classes = [[c.cls, c.name], c.slice ? [c.slice.cls, c.slice.name] : null, ...(c.extras || []).map(e => [e.cls, e.name]),
+        [c.seeds_cls, "Seeds"], [c.pack_cls, "Seed packet"],
         [c.plant_cls, "Plant"]].filter(Boolean);
       openSheet([
         h("div", { class: "gallery" }, img(c.plant_img, c.name + " plant", { loading: "eager" }),
@@ -203,6 +205,7 @@
           h("h2", { id: "sheet-title", text: c.name }),
           h("p", { class: "desc", text: c.desc }),
           c.slice ? h("p", { class: "desc", text: "Prepare it with a blade for " + c.slice.count + " slices and its seeds. " + c.slice.desc }) : null,
+          ...(c.extras || []).map(e => h("p", { class: "desc", text: e.how + ". " + e.desc })),
           h("p", { class: "desc", style: "color:var(--muted)", text: c.plant }),
           h("dl", {},
             h("dt", { text: "Ripens in" }), h("dd", { text: "About " + c.minutes + " minutes" }),
@@ -212,7 +215,7 @@
       ]);
     };
     stagger($("#crop-grid"), D.crops.map(c => h("button", { class: "card crop", type: "button", onclick: () => cropSheet(c), "aria-label": c.name + ", details" },
-      h("div", { class: "pic" }, img(c.img, ""), c.slice ? img(c.slice.img, "", { class: "extra" }) : null),
+      h("div", { class: "pic" }, img(c.img, ""), (c.slice || (c.extras || [])[0]) ? img((c.slice || c.extras[0]).img, "", { class: "extra" }) : null),
       h("div", { class: "info" },
         h("h3", { text: c.name }),
         h("p", { class: "meta", text: c.tagline }),

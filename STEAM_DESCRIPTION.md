@@ -56,7 +56,7 @@ Every mod by Geb stands on its own, so a server can run the ones it wants:
 [list]
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2757509117]Gebsfish[/url]: the fishing overhaul, with 94 catchable species, rods, lures, coolers, the jon boat and more
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664]Geb's Animals[/url]: 15 wildlife species
-[*] [url=https://packjc.github.io/gebsplants/]Geb's Plants[/url]: 29 garden crops including wild ginseng
+[*] [url=https://packjc.github.io/gebsplants/]Geb's Plants[/url]: 30 garden crops including wild ginseng
 [*] [b]Geb's Mushrooms[/b] (this mod): 69 edible, poisonous and psychedelic fungi
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2840597308]Alien Invasion[/url]: UFO crash sites, Little Green Men and the Montauk plasma rifle
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2886269800]Thanksgiving[/url]: Pilgrim clothes, turkeys and a flintlock musket for the holiday
